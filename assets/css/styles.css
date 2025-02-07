@@ -12,9 +12,8 @@ body {
 
 .media-container {
     width: 300px;
-    height: 300px;
+    height: 340px; /* Adjusted for the aspect ratio */
     margin: 20px;
-    background: url('https://tenor.com/biIWn.gif') center/cover;
 }
 
 .title {
