@@ -13,7 +13,7 @@ yesBtn.addEventListener('click', () => {
         gifImage.src = 'assets/images/mafu-mafumafu.gif'; // Replace with your new GIF path
         
         // Update the title
-        title.textContent = "Thank You! I love you too!!";
+        title.textContent = "Thank You! I love you so much!!";
         title.style.color = "#ff69b4"; // Pink color
         title.style.fontSize = "28px";
         
