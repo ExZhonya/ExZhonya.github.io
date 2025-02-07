@@ -10,7 +10,7 @@ let isYesClicked = false;
 yesBtn.addEventListener('click', () => {
     if (!isYesClicked) {
         // Change the GIF
-        gifImage.src = 'assets/images/happy-gif.gif'; // Replace with your new GIF path
+        gifImage.src = 'assets/images/mafu-mafumafu.gif'; // Replace with your new GIF path
         
         // Update the title
         title.textContent = "Thank You! I love you too!!";
