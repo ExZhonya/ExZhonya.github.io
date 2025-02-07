@@ -1,34 +1,95 @@
-<!DOCTYPE HTML>
-<html lang"en">
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width initial-scale=1.0"/>
-        <title>Intro EoA</title>
-        <link href="assets/css/main.css" rel="stylesheet"/>
-    </head>
-    <body>
-        <div class="menu">
-            <h1>Echo of Aros</h1>
-            <p class="established">Coming Soon.
-            Est 2025-2026.</p>
-            <hr>
-            <h2>Introduction</h2>
-            <p>Hello! it's me, Lua(or ExZhonya)
-            most of you probably don't know me, and some of you probably do(i know i forced you to read this html)
-            <br> but anyway, im here to tell you about my new-coming game, it's nothing that much interesting though! so anyway, let's hear it!</p>
-            <h2>Game Mechanic</h2>
-            <p>The game mechanic is going to be like that of text adventure, i doubt i will make a visual, like the character design or anything, just normal text and some tricks. it will contains monsters and dungeons, there will be like of stamina(probably not, not sure)</p>
-            <h2>Fight Mechanic</h2>
-            <p>The fight will not be a turn-based fight, instead it'll be like a cooldown each attack, different weapon, has different cooldowns. there'll be <br>
-            [1]fist(default), [2]sword, <br>
-            [3]spear, [4]gauntlet(fist upgrade?) </p>
-            <h2>Map Mechanic</h2>
-            <p>I will be making the map to have a control pad(?), up left right down arrows. the map will be probably categorized as zones for random dungeons etc, i think it shold reset every month/week ingame time.</p>
-            <br>
-            <a href="https://discord.com/users/557475840171048962" target="_blank">
-                <img src="https://img.shields.io/badge/contact-me-blue?logo=discord&logoColor=white" alt="discord logo" style="width: 90px; height: 20px"
-            </a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Buttons</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .media-container {
+            width: 300px;
+            height: 300px;
+            margin: 20px;
+            background: url('https://tenor.com/biIWn.gif') center/cover;
+        }
+
+        .title {
+            margin: 20px 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+
+        #yesBtn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #noBtn {
+            background-color: #f44336;
+            color: white;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="media-container"></div>
+    <h1 class="title">Choose Your Answer</h1>
+    <div class="buttons">
+        <button id="yesBtn">Yes</button>
+        <button id="noBtn">No</button>
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+
+        noBtn.addEventListener('click', () => {
+            // Get current font size or use default 18px
+            const currentSize = parseFloat(window.getComputedStyle(yesBtn).fontSize) || 18;
+            // Increase size by 20%
+            const newSize = currentSize * 1.2;
+            yesBtn.style.fontSize = `${newSize}px`;
             
-        </div>
-    </body>
+            // Optional: Add scaling animation
+            yesBtn.style.transform = `scale(1.1)`;
+            setTimeout(() => {
+                yesBtn.style.transform = `scale(1)`;
+            }, 100);
+        });
+
+        // Reset animation on mouse release
+        noBtn.addEventListener('mouseup', () => {
+            yesBtn.style.transform = `scale(1)`;
+        });
+    </script>
+</body>
 </html>
