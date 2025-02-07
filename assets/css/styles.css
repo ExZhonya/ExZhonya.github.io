@@ -11,9 +11,14 @@ body {
 }
 
 .media-container {
-    width: 300px;
-    height: 340px; /* Adjusted for the aspect ratio */
+    width: 300px; /* Adjust as needed */
+    height: auto; /* Allow height to adjust based on GIF */
     margin: 20px;
+}
+
+.gif-image {
+    width: 100%; /* Make the GIF responsive */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .title {
